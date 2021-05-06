@@ -1,4 +1,4 @@
-# Project
+# $IKE challenges
 
 This repository provides Sage scripts to generate SIKE challenge instances according to the SIKE specification (see https://sike.org/files/SIDH-spec.pdf). 
 
