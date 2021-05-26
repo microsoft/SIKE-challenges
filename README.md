@@ -1,6 +1,6 @@
 # $IKE challenges
 
-This repository provides Sage scripts to generate SIKE challenge instances according to the SIKE specification (see https://sike.org/files/SIDH-spec.pdf). 
+This repository provides Sage scripts to generate SIKE challenge instances according to the SIKE specification (see https://sike.org/files/SIDH-spec.pdf). The secrets module requires that python3 be installed (this is automatically installed for the latest version of Sage). 
 
 Inside "generate_challenge.sage" are 6 sets of parameters: the two mini prize instances $IKEp182 and $IKEp217, as well as the four instances currently in the SIKE specification. Additional parameters can be added by including a new e2 and e3 such that p=2^e2.3^e3-1 is prime. To generate a challenge instance, simply uncomment the corresponding parameters (leave all other parameters commented out), make sure the three files are in your current sage directory, and run
 
