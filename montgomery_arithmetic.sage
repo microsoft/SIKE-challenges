@@ -34,12 +34,13 @@ def ladder3pt(xP,xQ,xR,k,A):
     R0=xQ
     R1=xP
     R2=xR
-    for i in range(0,len(bits)):
+    for i in range(0,len(bits)-1):
         if bits[i] == 1:
             R1=xADD(R0,R1,R2)
         else:
             R2=xADD(R0,R2,R1)
         R0=xDBL(R0,A)
+    R1=xADD(R0,R1,R2)
     return R1
 
 #####################################
