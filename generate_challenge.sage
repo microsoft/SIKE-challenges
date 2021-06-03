@@ -4,11 +4,11 @@ import hashlib
 load("montgomery_arithmetic.sage")
 
 # GENERATE PRIZE INSTANCES
-e2=91;  e3=57;      file=open('$IKEp182.txt','w')
+#e2=91;  e3=57;      file=open('$IKEp182.txt','w')
 #e2=110; e3=67;     file=open('$IKEp217.txt','w')
 
 # GENERATE REAL SIKE INSTANCES
-#e2=216; e3=137;    file=open('SIKEp434.txt','w')
+e2=216; e3=137;    file=open('SIKEp434.txt','w')
 #e2=250; e3=159;    file=open('SIKEp503.txt','w')
 #e2=305; e3=192;    file=open('SIKEp610.txt','w')
 #e2=372; e3=239;    file=open('SIKEp751.txt','w')
@@ -42,13 +42,20 @@ A_Alice = A
 xS=ladder3pt(P2[0],Q2[0],R2[0],k_Alice,A_Alice)
 pts=[xS,P3[0],Q3[0],R3[0]]
 
-for e in range(e2-1,0,-1):    
+if is_odd(e2):
     x_ker=pts[0]
-    for i in range(0,e):
+    for i in range(0,e2-1):
         x_ker=xDBL(x_ker,A_Alice)
     A_Alice,pts=iso2(x_ker,pts)
 
-A_Alice,PK_Alice=iso2(pts[0],[pts[1],pts[2],pts[3]])
+for e in range(floor(e2/2)-1,0,-1):    
+    x_ker=pts[0]
+    for i in range(0,e):
+        x_ker=xDBL(x_ker,A_Alice)
+        x_ker=xDBL(x_ker,A_Alice)
+    A_Alice,pts=iso4(x_ker,pts)
+
+A_Alice,PK_Alice=iso4(pts[0],[pts[1],pts[2],pts[3]])
 
 #####################################
 ###### PARSE, PRINT AND WRITE #######
@@ -141,13 +148,21 @@ xS=ladder3pt(PK_Bob[0],PK_Bob[1],PK_Bob[2],k_Alice,A_Alice)
 
 pts=[xS]
 
-for e in range(e2-1,0,-1):
-	x_ker=pts[0]
-	for i in range(0,e):
-		x_ker=xDBL(x_ker,A_Alice)
-	A_Alice,pts=iso2(x_ker,pts)
+if is_odd(e2):
+    x_ker=pts[0]
+    for i in range(0,e2-1):
+        x_ker=xDBL(x_ker,A_Alice)
+    A_Alice,pts=iso2(x_ker,pts)
 
-A_Alice=2*(1-2*pts[0]^2)
+for e in range(floor(e2/2)-1,0,-1):    
+    x_ker=pts[0]
+    for i in range(0,e):
+        x_ker=xDBL(x_ker,A_Alice)
+        x_ker=xDBL(x_ker,A_Alice)
+    A_Alice,pts=iso4(x_ker,pts)
+
+A_Alice=2*(2*pts[0]^4-1)
+
 shared_Alice=jInv(A_Alice)
 
 #####################################

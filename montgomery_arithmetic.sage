@@ -64,6 +64,16 @@ def iso3(beta,a,pts):
     return (6-6*beta^2+a*beta)*beta,image_pts
 
 #####################################
+############# 4-isogeny #############
+#####################################
+
+def iso4(alpha,pts):
+    image_pts=[]
+    for x in pts:
+        image_pts.append(x*(alpha^2*x-2*alpha+x)*(alpha*x-1)^2/((alpha^2-2*alpha*x+1)*(alpha-x)^2))
+    return 2*(2*alpha^4-1),image_pts
+
+#####################################
 ############ j-invariant ############
 #####################################
 
@@ -77,4 +87,3 @@ def jInv(a):
 
 def MontFromPoints(xP,xQ,xR):
     return (1-xP*xQ-xP*xR-xQ*xR)^2/(4*xP*xQ*xR)-xP-xQ-xR
-
