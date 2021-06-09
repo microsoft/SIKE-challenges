@@ -12,6 +12,10 @@ The instance is implicitly an instance of the Supersingular Computational Diffie
 
 Questions/comments: craigco@microsoft.com
 
+# $IKEp182 and $IKEp217 cash prizes 
+
+The files $IKEp182.txt and $IKEp217.txt define specific instances of the SSCDH problem. The first solution to the $IKEp182 instance will be awarded a cash prize of $5,000 USD. The first solution to the $IKEp217 instance will be awarded a cash prize of $50,000 USD. See https://www.microsoft.com/en-us/msrc/sike-cryptographic-challenge for further details. 
+
 
 ## Contributing
 
