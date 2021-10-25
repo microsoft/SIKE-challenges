@@ -16,6 +16,9 @@ Questions/comments: craigco@microsoft.com
 
 The files $IKEp182.txt and $IKEp217.txt define specific instances of the SSCDH problem. The first solution to the $IKEp182 instance will be awarded a cash prize of $5,000 USD. The first solution to the $IKEp217 instance will be awarded a cash prize of $50,000 USD. See https://www.microsoft.com/en-us/msrc/sike-cryptographic-challenge for further details. 
 
+# $IKEp182 solved! 
+
+CONGRATULATIONS to Aleksei Udovenko and Giuseppe Vitto, who successfully solved the $IKEp182 challenge on Saturday, August 28, 2021 and claimed the $5000 cash prize. See https://eprint.iacr.org/2021/1421.pdf for the details of their computation. 
 
 ## Contributing
 
