@@ -20,6 +20,10 @@ The files $IKEp182.txt and $IKEp217.txt define specific instances of the SSCDH p
 
 CONGRATULATIONS to Aleksei Udovenko and Giuseppe Vitto, who successfully solved the $IKEp182 challenge on Saturday, August 28, 2021 and claimed the $5000 cash prize. See https://eprint.iacr.org/2021/1421.pdf for the details of their computation. 
 
+# $IKEp217 solved! 
+
+CONGRATULATIONS to Wouter Castryck and Thomas Decru, who successfully solved the $IKEp217 challenge on Friday, July 22, 2022 and claimed the $50000 cash prize. See https://eprint.iacr.org/2022/975.pdf for the details of their attack. 
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
